@@ -1,6 +1,6 @@
 package tl.antlr4;
 
-import java.io.BufferedReader;
+import java.util.Scanner;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.nio.file.Files;
@@ -476,8 +476,8 @@ public class EvalVisitor extends TLBaseVisitor<TLValue> {
 		        text = text.substring(1, text.length() - 1).replaceAll("\\\\(.)", "$1");
 				return new TLValue(new String(Files.readAllBytes(Paths.get(text))));
 			} else {
-				BufferedReader buffer = new BufferedReader(new InputStreamReader(System.in));
-				return new TLValue(buffer.readLine());
+				Scanner sc = new Scanner(System.in);
+				return new TLValue(sc.nextLine());
 			}
 		} catch (IOException e) {
 			throw new RuntimeException(e);

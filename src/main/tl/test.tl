@@ -161,4 +161,10 @@ assert(n[1][1] == n[2][2]);
 assert(p[2]);
 assert(p[1][2] == 'c');
 
+print("Enter your name: ");
+str = input();
+print("Hello, ");
+print(str);
+println("!");
+
 println("All Assertions have passed.");
